@@ -86,3 +86,31 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+console.log ("Financial Analysis")
+console.log ("------------------")
+
+// The total number of months included in the dataset.
+console.log ("Total Months: " + finances.length)
+
+// The net total amount of Profit/Losses over the entire period.
+var total = 0
+for (i=0; i<finances.length; i++) {
+  total = total + finances[i][1]
+}
+console.log ("Total: $" + total)
+
+// The average of the changes in Profit/Losses over the entire period.
+
+
+var changeSum = 0
+for (i=0; i<finances.length-1 ; i++) {
+  changeSum = changeSum + (finances[i+1][1] - finances[i][1]);
+}
+console.log ("Average Change: "+ (changeSum/(finances.length-1)).toFixed(2))
+
+/*
+ var olderData = finances[i][1]
+  var newerData = finances[i+1][1]
+  var changes = newerData - olderData
+  */
