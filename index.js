@@ -111,11 +111,13 @@ console.log ("Average Change: "+ (changeSum/(finances.length-1)).toFixed(2))
 
 //The greatest increase in Profit/Losses (date and amount) over the entire period.
 var maxIncrease = 0
+var maxIncreaseDate
 for (i=0; i<finances.length-1 ; i++) {
   if (finances[i+1][1] - finances[i][1] > maxIncrease) {
     maxIncrease = finances[i+1][1] - finances[i][1]
+    maxIncreaseDate = finances[i+1][0]
   }
 }
-console.log (maxIncrease)
+console.log ("Greatest Increase in Profits/Losses: " + maxIncreaseDate + " ($" + maxIncrease + ")")
 
 //The greatest decrease in Profit/Losses (date and amount) over the entire period.
