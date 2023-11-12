@@ -101,16 +101,21 @@ for (i=0; i<finances.length; i++) {
 console.log ("Total: $" + total)
 
 // The average of the changes in Profit/Losses over the entire period.
-
-
 var changeSum = 0
 for (i=0; i<finances.length-1 ; i++) {
+  //total change in Profit/Losses are from month to month
   changeSum = changeSum + (finances[i+1][1] - finances[i][1]);
 }
+//finding the average - (Total/(Number of months - 1))
 console.log ("Average Change: "+ (changeSum/(finances.length-1)).toFixed(2))
 
-/*
- var olderData = finances[i][1]
-  var newerData = finances[i+1][1]
-  var changes = newerData - olderData
-  */
+//The greatest increase in Profit/Losses (date and amount) over the entire period.
+var maxIncrease = 0
+for (i=0; i<finances.length-1 ; i++) {
+  if (finances[i+1][1] - finances[i][1] > maxIncrease) {
+    maxIncrease = finances[i+1][1] - finances[i][1]
+  }
+}
+console.log (maxIncrease)
+
+//The greatest decrease in Profit/Losses (date and amount) over the entire period.
