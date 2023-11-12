@@ -107,7 +107,7 @@ for (i=0; i<finances.length-1 ; i++) {
   changeSum = changeSum + (finances[i+1][1] - finances[i][1]);
 }
 //finding the average - (Total/(Number of months - 1))
-console.log ("Average Change: "+ (changeSum/(finances.length-1)).toFixed(2))
+console.log ("Average Change: $"+ (changeSum/(finances.length-1)).toFixed(2))
 
 //The greatest increase in Profit/Losses (date and amount) over the entire period.
 var maxIncrease = 0
