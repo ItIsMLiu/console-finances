@@ -121,3 +121,12 @@ for (i=0; i<finances.length-1 ; i++) {
 console.log ("Greatest Increase in Profits/Losses: " + maxIncreaseDate + " ($" + maxIncrease + ")")
 
 //The greatest decrease in Profit/Losses (date and amount) over the entire period.
+var maxDecrease = 0
+var maxDecreaseDate
+for (i=0; i<finances.length-1 ; i++) {
+  if (finances[i+1][1] - finances[i][1] < maxDecrease) {
+    maxDecrease = finances[i+1][1] - finances[i][1]
+    maxDecreaseDate = finances[i+1][0]
+  }
+}
+console.log ("Greatest Decrease in Profits/Losses: " + maxDecreaseDate + " ($" + maxDecrease + ")")
